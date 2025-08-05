@@ -4,3 +4,10 @@ main: com.example.anti_politically_related_content.Main
 api-version: 1.21
 description: 自动审核并撤回玩家聊天中的涉政内容
 authors: [WeCraft（_Chinese_Player_）]
+
+commands:
+  aprc:
+    description: 开启或关闭 APRC AI 审核功能
+    usage: /<command> [on|off|reload|test|version]
+    permission: aprc.admin
+    permission-message: §c你没有权限使用此命令！
