@@ -1,0 +1,29 @@
+# 这是APRC插件配置文件
+# 默认主API地址为OpenRouter，备用API为硅基流动
+# 默认模型均为免费模型
+# 请按要求填写API Key和必要配置
+
+# API类型，支持 "openai"（或OpenRouter）或 "gemini"
+api_type: "openai"
+
+# 提示词，用于指导AI判断涉政内容
+# 建议保持简洁，仅要求返回"Yes"或"No"
+prompt: "请严格判断以下内容是否包含涉政言论（目的不明显不算），只回答Yes或No。不要分析、解释，不要判断是否包含脏话："
+
+# 主API配置
+primary:
+  # 主API密钥，必须填写，否则插件将禁用
+  api_key: "在此输入主API Key"
+  # 主API模型，默认为免费的DeepSeek模型
+  model: "deepseek/deepseek-chat-v3-0324:free"
+  # 主API地址，默认为OpenRouter的聊天完成接口
+  api_url: "https://openrouter.ai/api/v1/chat/completions"
+
+# 备用API配置（可选）
+backup:
+  # 备用API密钥，可留空，若为空则不使用备用API
+  api_key: "在此输入备用API Key"
+  # 备用API模型，默认为硅基流动的免费模型
+  model: "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B"
+  # 备用API地址，默认为硅基流动的聊天完成接口
+  api_url: "https://api.siliconflow.cn/v1/chat/completions"
