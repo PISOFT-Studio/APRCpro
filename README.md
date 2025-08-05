@@ -17,6 +17,10 @@
   - 使用违规ID的玩家会被封禁
 - 异步API调用不影响服务器性能
 - 有日志功能
+- 【4.0-RELEASE版本更新】可通过/aprc test测试API地址连接
+- 【4.0-RELEASE版本更新】可通过配置文件更改API相关配置（也就是说作者可以上传提前打包好的jar了）
+- 【4.0-RELEASE版本更新】/aprc reload可重载配置文件
+- 【4.0-RELEASE版本更新】增加一个备用API地址位，防止其中一个API平台突然爆炸
 
 ## 安装要求
 
@@ -41,14 +45,15 @@
 
 ## 配置说明
 
-1. 在config.yml中修改以下常量：
+1. 在config.yml中修改：
    ```yml
-   apiKey="12345678900000000"
+   primary:
+      api_key: "在此输入主API Key"
    ```
 
 2. 确保服务器可以访问OpenRouter API或Google Gemini:
-   ```java
-   private static final String API_URL = "https://openrouter.ai/api/v1/chat/completions";
+   ```yml
+   api_url: "https://openrouter.ai/api/v1/chat/completions"
    ```
 
 ## 注意事项
@@ -61,8 +66,7 @@
 
 - 项目名称: anti-politically-related-content-pro
 - 组ID: com.example
-- 版本: 1.0-SNAPSHOT
-- 依赖: PaperAPI, OkHttp, Gson
+- 版本: 1.0.1
 
 ## 许可证
 
